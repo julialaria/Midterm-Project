@@ -6,7 +6,7 @@ Para empezar, podrá crear nuestras clases en tablas poniendo “create” en pr
 
 Ej: jdbc:mysql://localhost:3306/suesquema?serverTimezone=UTC 
 
- https://github.com/julialaria/Midterm-Project/blob/main/1.JPG?raw=true
+ https://github.com/julialaria/Midterm-Project/blob/main/1.JPG
 
 Una vez creada sus tablas, podrá rellenarlas con la información que encontrará en la carpeta resources--> static --> schema.sql 
 
