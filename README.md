@@ -1,217 +1,182 @@
 # Midterm-Project
 
-Bienvenido a nuestro sistema bancario. A continuación, le mostraremos cómo usar nuestro sistema de la forma más productiva. 
+Welcome to our banking system. In the following, we will show you how to use our system in the most productive way.
 
-Para empezar, podrá crear nuestras clases en tablas poniendo “create” en properties y vinculándolo a un schema de mysql. En el ejemplo, usamos “banking”. Deberá añadir su username y password. 
+To start with, you can create our classes in tables by putting **“create”** in properties and linking it to a mysql schema. In the example, we use “banking” schema. You must add your username and password.
 
-Ej: jdbc:mysql://localhost:3306/suesquema?serverTimezone=UTC 
+Ej: jdbc:mysql://localhost:3306/**suesquema**?serverTimezone=UTC 
 
 ![p1](https://github.com/julialaria/Midterm-Project/blob/main/1.JPG?raw=true)
 
+Once your tables have been created, you can fill them with the information that you will find in the folder **resources -> static -> schema.sql**
+
+![p2]()
+
+**1. ADMINISTRATOR** 
+
+If you are an administrator, you must enter your **username and password in Postman** through **Basic Auth**. Once you are logged in as an administrator, you have the following options:
+
+You can have all the information of your accounts through the url **/accounts / by-username**, of type GET.
+ 
+
+**1.1 ACCOUNTHOLDER** 
+
+You will be able to have all the information of the accounts of the AccountHolders. To do this, you must enter the url **/accountHolder**, of type GET. In the same way, you can have the information of a specific accountHolder if you know the AccountHolderId by entering the url **/accountHolder/by-id/{id}**
+
+If you want to create an account for an AccountHolder, you must enter the url **/create/accountHolder**, of type POST. Here you can find an example of the data you need to enter into Postman:
 
 
-Una vez creada sus tablas, podrá rellenarlas con la información que encontrará en la carpeta resources--> static --> schema.sql 
+***Attention:
+
+- The mailingAddress is optional.
+
+ ![p3]()
 
  
 
+**1.2 THIRDPARTY** 
+
+You can have all the information for ThirdParty type accounts. To do this, you must enter the url **/thirdParty**, of type GET. In the same way, you can have the information of a specific ThirdParty if you know the ThirdPartyId by entering the url **/thirdParty/by-id/{id}**
+
+If you want to create an account for a ThirParty, you must enter the url **/create/thirdParty**, of type POST. Here you can find an example of the data you need to enter into Postman:
+
+***Attention:
+
+-If you don't enter a hashKey it will be generated automatically.
+ 
+![p4]()
+
+ **1.3 SAVINGS** 
+
+You can have all the information of the Saving type accounts. To do this, you must enter the url **/savings**, of type GET. In the same way, you can have the information of a specific saving if you know the SavingId by entering the url **/savings/by-id/{id}**
+
+If you want to create an account of type Saving, you must enter the url **/create/savings**, of type POST. You must have previously created the Accountholder that owns the account. Here you can find an example of the data you need to enter into Postman:
+
+***Attention:
+
+-SecondaryOwner is optional.
+
+-If you do not enter a minimumBalance, the default of 1000 will be applied.
+
+-If you do not enter an interestRate, the default of 0.0025% will be applied.
+
+-The minimumBalance must be greater than or equal to 100.
+
+-The interestRate must be less than or equal to 0.5
+
+-If the minimumBalance falls below 250, a penaltyFee of 40 will be applied.
+
+-The account status will be ACTIVE by default
+
+-For accounts of this type, the chosen interest will be added to your balance annually. The operation will be carried out once you access your account and a year has passed since its creation or since the interest was applied for the last time.
+ 
+![p5]()
  
 
-ADMINISTRADOR 
+**1.4 CHECKINGS** 
+
+You can have all the information of the Checking type accounts. To do this, you must enter the url **/checking**, of type GET. In the same way, you can have the information of a specific checking if you know the CheckingId by entering the url **/checking/by-id/{id}**
+
+If you want to create an account of type Checking, you must enter the url **/create/checking**, of type POST. You must have previously created the Accountholder that owns the account. Here you can find an example of the data you need to enter into Postman:
+
+***Attention:
+
+-SecondaryOwner is optional
+
+-The minimumBalance will always be of 250
+
+-The monthlyMaintenanceFee will always be of 12
+
+-If the minimumBalance falls below 250, a penaltyFee of 40 will be applied.
+
+-The account status will be ACTIVE by default
+
+-If the AccountHolder for the account is less than 24 years old, a StudenChecking account will automatically be created that will have neither minimumBalance nor montlyMaintenanceFee.
 
  
-
-En caso de que usted sea un administrador, deberá introducir en Postman a través Basic Auth su nombre de usuario y su clave. Una vez hecho el log in como administrador, tiene las siguientes opciones: 
-
+![p6]()
  
 
-Podrá tener toda la información de sus cuentas a través de la url  /accounts/by-username, de tipo GET. 
+**1.5 CREDITCARD** 
 
+You can have all the information of the CreditCard type accounts. To do this, you must enter the url **/creditCard**, of type GET. In the same way, you can have the information of a specific CreditCard if you know the CreditCardId by entering the url **/creditCard/by-id/{id}**
+
+If you want to create an account of type CreditCard, you must enter the url **/create/creditCard**, of type POST. You must have previously created the Accountholder that owns the account. Here you can find an example of the data you need to enter into Postman:
+
+***Attention:
+
+-SecondaryOwner is optional.
+
+-If you do not enter a creditLimit, the default of 100 will be applied.
+
+-If you do not enter any interestRate, the default of 0.2% will be applied.
+
+-The creditLimit must be greater than or equal to 100 and less than or equal to 100,000.
+
+-The interestRate must be greater than or equal to 0.1% and less than or equal to 0.2%
+
+-To accounts of this type, the chosen annual interest will be added to your balance every month, divided by 12. The operation will be carried out once you access your account and a month has passed since its creation or since the interest was last applied. 
+ 
+![p7]()
  
 
-ACCOUNTHOLDER 
+**1.6 STUDENTCHECKING** 
 
- 
+You can have all the information of the StudentChecking type accounts. To do this, you must enter the url **/studentChecking**, of type GET. In the same way, you can have the information of a specific StudentChecking if you know the StudentCheckingId by entering the url **/studentChecking/by-id/{id}**
 
-Podrá tener toda la información de las cuentas de los AccountHolders. Para ello, deberá introducir la url  /accountHolder, de tipo GET. Del mismo modo, podrá tener la información de un accountHolder concreto si conoce el AccountHolderId introduciendo la url /accountHolder/by-id/{id} 
-
-Si quiere crear una cuenta para un AccountHolder, deberá introducir la url /create/accountHolder, de tipo POST. Aquí puede encontrar un ejemplo de los datos que debe introducir en Postman: 
-
-Atención: 
-
-El mailingAddress es opcional. 
-
- 
-
- 
-
-THIRDPARTY 
-
- 
-
-Podrá tener toda la información de las cuentas de tipo ThirdParty. Para ello, deberá introducir la url  /thirdParty , de tipo GET. Del mismo modo, podrá tener la información de un ThirdParty concreto si conoce el ThirdPartyId introduciendo la url /thirdParty/by-id/{id} 
-
-Si quiere crear una cuenta para un ThirParty, deberá introducir la url /create/thirdParty, de tipo POST. Aquí puede encontrar un ejemplo de los datos que debe introducir en Postman: 
-
-Atención: 
-
-Si no introduce una hashKey se generará automáticamente. 
-
- 
-
- SAVINGS 
-
-Podrá tener toda la información de las cuentas de tipo Saving. Para ello, deberá introducir la url  /savings, de tipo GET. Del mismo modo, podrá tener la información de un saving concreto si conoce el SavingId introduciendo la url /savings/by-id/{id} 
-
- 
-
-Si quiere crear una cuenta del tipo Saving, deberá introducir la url /create/savings, de tipo POST.  Deberá haber creado previamente al Accountholder propietario de la cuenta. Aquí puede encontrar un ejemplo de los datos que debe introducir en Postman: 
-
- 
-
-Atención:  
-
-SecondaryOwner es opcional.  
-
-Si no introduce ningún minimumBalance, se le aplicará el default de 1000.  
-
-Si no introduce ningún interestRate, se le aplicará el default de 0.0025%.   
-
-El minimumBalance deberá ser mayor o igual a 100. 
-
-El interestRate deberá ser menor o igual a 0.5 
-
-Si el minimumBalance baja de 250, se le aplicará un penaltyFee de 40. 
-
-El status de la cuenta será por defecto ACTIVE 
-
-A las cuentas de este tipo se le añadirá anualmente a su balance el interés elegido. La operación se realizará una vez acceda a su cuenta y haya pasado un año desde su creación o desde que se le aplicó el interés por última vez.  
-
- 
-
- 
-
-CHECKINGS 
-
- 
-
-Podrá tener toda la información de las cuentas de tipo Checking. Para ello, deberá introducir la url  /checking , de tipo GET. Del mismo modo, podrá tener la información de un checking concreto si conoce el CheckingId introduciendo la url /checking/by-id/{id} 
-
- 
-
-Si quiere crear una cuenta del tipo Checking, deberá introducir la url /create/checking, de tipo POST.  Deberá haber creado previamente al Accountholder propietario de la cuenta. Aquí puede encontrar un ejemplo de los datos que debe introducir en Postman: 
-
-Atención: 
-
-SecondaryOwner es opcional 
-
-The minimumBalance will always be of 250 
-
-The monthlyMaintenanceFee will always be of 12 
-
-Si el minimumBalance baja de 250, se le aplicará un penaltyFee de 40. 
-
-El status de la cuenta será por defecto ACTIVE 
-
-Si el AccountHolder de la cuenta tiene menos de 24 años de edad, se creará automáticamente una cuneta del tipo StudenChecking que no tendrá ni minimumBalance ni montlyMaintenanceFee. 
+ ![p8]()
 
  
 
- 
+**1.7UPDATEBALANCE** 
 
-CREDITCARD 
+Any type of account can modify the balance. To do this, you must enter the url **/updateBalance/{id}**, of type PATCH, indicating the id of the account to modify:
 
- 
+ ![p9]()
 
-Podrá tener toda la información de las cuentas de tipo CreditCard. Para ello, deberá introducir la url  /creditCard , de tipo GET. Del mismo modo, podrá tener la información de un CreditCard concreto si conoce el CreditCardId introduciendo la url /creditCard/by-id/{id} 
+**1.8 UPDATESTATUS** 
 
-Si quiere crear una cuenta del tipo CreditCard, deberá introducir la url /create/creditCard, de tipo POST.  Deberá haber creado previamente al Accountholder propietario de la cuenta. Aquí puede encontrar un ejemplo de los datos que debe introducir en Postman: 
-
-Atención: 
-
-SecondaryOwner es opcional.  
-
-Si no introduce ningún creditLimit, se le aplicará el default de 100.  
-
-Si no introduce ningún interestRate, se le aplicará el default de 0.2%.   
-
-El creditLimit deberá ser mayor o igual a 100 y menor o igual a 100000. 
-
-El interestRate deberá ser mayor o igual a 0.1% y menor o igual a 0.2% 
-
-A las cuentas de este tipo se le añadirá mensualmente a su balance el interés anual elegido, divido por 12. La operación se realizará una vez acceda a su cuenta y haya pasado un mes desde su creación o desde que se le aplicó el interés por última vez. 
+You can modify the Status of the account that has it. To do this, you must enter the url **/updateStatus/{id}**, of type PATCH, indicating the id of the account to modify:
 
  
-
+![p10]()
  
 
-STUDENTCHECKING 
+**1.9TRANSACTIONS** 
+
+You can get the information of all transactions through the url **/transactions** of type GET.
+
+![p11]() 
+
+**2.ACCOUNTHOLDER** 
+
+In case you are an AccountHolder, you must enter your **username and password** in Postman through **Basic Auth**. Once you have logged in as an AccountHolder, you have the following options:
+
+You can have all the information about your accounts through the url **/accounts/by-username**, of type GET.
+
+You can make transfers from one of your accounts to any other through the url **/transaction** of POST type. To do this, you must enter the following information in Postman:
+
+![p12]()
+
+
+***Attention:
+
+-You can only make transfers from one of your accounts.
+
+-Fraud Detection - If more than one transaction per second is logged from your account, your status will go to FROZEN for security reasons.
+
+-In the same way, if you exceed 150% in one day your historical maximum of transactions carried out in 24 hours, fraud will be detected and the status of your account will pass to FROZEN until it is supervised.
 
  
+**3.THIRDPARTY** 
 
-Podrá tener toda la información de las cuentas de tipo StudentChecking. Para ello, deberá introducir la url  /studentChecking , de tipo GET. Del mismo modo, podrá tener la información de un StudentChecking concreto si conoce el StudentCheckingId introduciendo la url /studentChecking/by-id/{id} 
+In case you are a ThirdParty, you have the following options:
 
- 
+You can receive and send money to other accounts. To do this you must use the url **/update?hashedKey={hashedKey}** of type PATCH. To do this, you must enter the following information in Postman:
 
- 
+***Attention:
 
-UPDATEBALANCE 
-
-Podrá modificar el balance cualquier tipo de cuenta. Para ello, deberá introducir la url /updateBalance/{id}, de tipo PATCH, indicando el id de la cuenta a modificar: 
-
- 
-
-UPDATESTATUS 
-
-Podrá modificar el Status de la cuenta que cuente con el mismo. Para ello, deberá introducir la url /updateStatus/{id}, de tipo PATCH, indicando el id de la cuenta a modificar: 
-
- 
-
- 
-
-TRANSACTIONS 
-
-Podrá obtener la información de todas las transacciones a través de la url /transactions de tipo GET. 
-
- 
-
-ACCOUNTHOLDER 
-
- 
-
-En caso de que usted sea un AccountHolder, deberá introducir en Postman a través Basic Auth su nombre de usuario y su clave. Una vez hecho el loggin como AccountHolder , tiene las siguientes opciones: 
-
- 
-
-Podrá tener toda la información de sus cuentas a través de la url /accounts/by-username, de tipo GET. 
-
- 
-
-Podrá realizar transferencias de una de sus cuentas a cualquier otra a través de la url /transaction de tipo POST. Para ello, deberá introducir en Postman los siguientes datos: 
-
-Atención: 
-
-Solo podrá hacer transferencias desde una de sus cuentas. 
-
-Detención de fraude: si se registran más de una trasanction por segundo desde su cuenta, su estado pasará a FROZEN por motivos de seguridad.  
-
-Del mismo modo, si usted supera en un día el 150% su máximo histórico de transactions  realizadas en 24h, se detectará fraude y el estado de su cuenta pasará a FROZEN hasta que sea supervisada. 
-
- 
-
- 
-
-THIRDPARTY 
-
- 
-
-En caso de que usted sea un ThirdParty, tiene las siguientes opciones: 
-
-Podrá recibir y enviar dinero a otras cuentas. Para ello deberá usar la url /update?hashedKey={hashedKey} de tipo PATCH. Para ello, deberá introducir en Postman los siguientes datos: 
-
-Atención: 
-
-También podrá poner como “transactionType” la opción de “SEND”, para enviar dinero a la cuenta deseada. Deberá indicar siempre el id de la cuneta con la que quiere trabajar y su secretKey. 
-
+-You can also set the "SEND" option as "transactionType", to send money to the desired account. You must always indicate the id of the account you want to work with and its secretKey.
  
 
  
