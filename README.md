@@ -6,8 +6,7 @@ Para empezar, podrá crear nuestras clases en tablas poniendo “create” en pr
 
 Ej: jdbc:mysql://localhost:3306/suesquema?serverTimezone=UTC 
 
-## COMMANDS HELP
-![commandshelp1](https://github.com/julialaria/Midterm-Project/blob/main/1.JPG?raw=true)
+![p1](https://github.com/julialaria/Midterm-Project/blob/main/1.JPG?raw=true)
 
 
 
