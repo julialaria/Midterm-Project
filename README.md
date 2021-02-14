@@ -26,7 +26,7 @@ You will be able to have all the information of the accounts of the AccountHolde
 If you want to create an account for an AccountHolder, you must enter the url **/create/accountHolder**, of type POST. Here you can find an example of the data you need to enter into Postman:
 
 
-***Attention:
+***Attention***:
 
 - The mailingAddress is optional.
 
@@ -39,7 +39,7 @@ You can have all the information for ThirdParty type accounts. To do this, you m
 
 If you want to create an account for a ThirParty, you must enter the url **/create/thirdParty**, of type POST. Here you can find an example of the data you need to enter into Postman:
 
-***Attention:
+***Attention***:
 
 -If you don't enter a hashKey it will be generated automatically.
  
@@ -51,7 +51,7 @@ You can have all the information of the Saving type accounts. To do this, you mu
 
 If you want to create an account of type Saving, you must enter the url **/create/savings**, of type POST. You must have previously created the Accountholder that owns the account. Here you can find an example of the data you need to enter into Postman:
 
-***Attention:
+***Attention***:
 
 -SecondaryOwner is optional.
 
@@ -77,7 +77,7 @@ You can have all the information of the Checking type accounts. To do this, you 
 
 If you want to create an account of type Checking, you must enter the url **/create/checking**, of type POST. You must have previously created the Accountholder that owns the account. Here you can find an example of the data you need to enter into Postman:
 
-***Attention:
+***Attention***:
 
 -SecondaryOwner is optional
 
@@ -100,7 +100,7 @@ You can have all the information of the CreditCard type accounts. To do this, yo
 
 If you want to create an account of type CreditCard, you must enter the url **/create/creditCard**, of type POST. You must have previously created the Accountholder that owns the account. Here you can find an example of the data you need to enter into Postman:
 
-***Attention:
+***Attention***:
 
 -SecondaryOwner is optional.
 
@@ -150,7 +150,7 @@ You can make transfers from one of your accounts to any other through the url **
 ![p11](https://github.com/julialaria/Midterm-Project/blob/main/10.JPG?raw=true)
 
 
-***Attention:
+***Attention***:
 
 -You can only make transfers from one of your accounts.
 
@@ -165,7 +165,7 @@ In case you are a ThirdParty, you have the following options:
 
 You can receive and send money to other accounts. To do this you must use the url **/update?hashedKey={hashedKey}** of type PATCH. To do this, you must enter the following information in Postman:
 
-***Attention:
+***Attention***:
 
 -You can also set the "SEND" option as "transactionType", to send money to the desired account. You must always indicate the id of the account you want to work with and its secretKey.
 
