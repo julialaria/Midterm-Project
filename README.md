@@ -10,7 +10,7 @@ Ej: jdbc:mysql://localhost:3306/**suesquema**?serverTimezone=UTC
 
 Once your tables have been created, you can fill them with the information that you will find in the folder **resources -> static -> schema.sql**
 
-![p2]()
+![p2](https://github.com/julialaria/Midterm-Project/blob/main/2.JPG?raw=true)
 
 **1. ADMINISTRATOR** 
 
@@ -30,10 +30,9 @@ If you want to create an account for an AccountHolder, you must enter the url **
 
 - The mailingAddress is optional.
 
- ![p3]()
+ ![p3](https://github.com/julialaria/Midterm-Project/blob/main/3.JPG?raw=true)
 
  
-
 **1.2 THIRDPARTY** 
 
 You can have all the information for ThirdParty type accounts. To do this, you must enter the url **/thirdParty**, of type GET. In the same way, you can have the information of a specific ThirdParty if you know the ThirdPartyId by entering the url **/thirdParty/by-id/{id}**
@@ -44,7 +43,7 @@ If you want to create an account for a ThirParty, you must enter the url **/crea
 
 -If you don't enter a hashKey it will be generated automatically.
  
-![p4]()
+![p4](https://github.com/julialaria/Midterm-Project/blob/main/4.JPG?raw=true)
 
  **1.3 SAVINGS** 
 
@@ -70,9 +69,8 @@ If you want to create an account of type Saving, you must enter the url **/creat
 
 -For accounts of this type, the chosen interest will be added to your balance annually. The operation will be carried out once you access your account and a year has passed since its creation or since the interest was applied for the last time.
  
-![p5]()
+![p5](https://github.com/julialaria/Midterm-Project/blob/main/5.JPG?raw=true)
  
-
 **1.4 CHECKINGS** 
 
 You can have all the information of the Checking type accounts. To do this, you must enter the url **/checking**, of type GET. In the same way, you can have the information of a specific checking if you know the CheckingId by entering the url **/checking/by-id/{id}**
@@ -93,8 +91,7 @@ If you want to create an account of type Checking, you must enter the url **/cre
 
 -If the AccountHolder for the account is less than 24 years old, a StudenChecking account will automatically be created that will have neither minimumBalance nor montlyMaintenanceFee.
 
- 
-![p6]()
+![p6](https://github.com/julialaria/Midterm-Project/blob/main/6.JPG?raw=true)
  
 
 **1.5 CREDITCARD** 
@@ -117,36 +114,31 @@ If you want to create an account of type CreditCard, you must enter the url **/c
 
 -To accounts of this type, the chosen annual interest will be added to your balance every month, divided by 12. The operation will be carried out once you access your account and a month has passed since its creation or since the interest was last applied. 
  
-![p7]()
+![p7](https://github.com/julialaria/Midterm-Project/blob/main/7.JPG?raw=true)
  
 
 **1.6 STUDENTCHECKING** 
 
 You can have all the information of the StudentChecking type accounts. To do this, you must enter the url **/studentChecking**, of type GET. In the same way, you can have the information of a specific StudentChecking if you know the StudentCheckingId by entering the url **/studentChecking/by-id/{id}**
 
- ![p8]()
-
- 
-
 **1.7UPDATEBALANCE** 
 
 Any type of account can modify the balance. To do this, you must enter the url **/updateBalance/{id}**, of type PATCH, indicating the id of the account to modify:
 
- ![p9]()
+ ![p8](https://github.com/julialaria/Midterm-Project/blob/main/8.JPG?raw=true)
 
 **1.8 UPDATESTATUS** 
 
 You can modify the Status of the account that has it. To do this, you must enter the url **/updateStatus/{id}**, of type PATCH, indicating the id of the account to modify:
 
- 
-![p10]()
+![p9](https://github.com/julialaria/Midterm-Project/blob/main/9.JPG?raw=true)
  
 
 **1.9TRANSACTIONS** 
 
 You can get the information of all transactions through the url **/transactions** of type GET.
 
-![p11]() 
+![p10](https://github.com/julialaria/Midterm-Project/blob/main/10.JPG?raw=true) 
 
 **2.ACCOUNTHOLDER** 
 
@@ -156,7 +148,7 @@ You can have all the information about your accounts through the url **/accounts
 
 You can make transfers from one of your accounts to any other through the url **/transaction** of POST type. To do this, you must enter the following information in Postman:
 
-![p12]()
+![p11](https://github.com/julialaria/Midterm-Project/blob/main/10.JPG?raw=true)
 
 
 ***Attention:
@@ -177,6 +169,8 @@ You can receive and send money to other accounts. To do this you must use the ur
 ***Attention:
 
 -You can also set the "SEND" option as "transactionType", to send money to the desired account. You must always indicate the id of the account you want to work with and its secretKey.
+
+![p12]()
  
 
  
