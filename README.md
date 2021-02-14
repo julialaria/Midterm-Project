@@ -121,7 +121,7 @@ If you want to create an account of type CreditCard, you must enter the url **/c
 
 You can have all the information of the StudentChecking type accounts. To do this, you must enter the url **/studentChecking**, of type GET. In the same way, you can have the information of a specific StudentChecking if you know the StudentCheckingId by entering the url **/studentChecking/by-id/{id}**
 
-**1.7UPDATEBALANCE** 
+**1.7 UPDATEBALANCE** 
 
 Any type of account can modify the balance. To do this, you must enter the url **/updateBalance/{id}**, of type PATCH, indicating the id of the account to modify:
 
@@ -133,8 +133,7 @@ You can modify the Status of the account that has it. To do this, you must enter
 
 ![p9](https://github.com/julialaria/Midterm-Project/blob/main/9.JPG?raw=true)
  
-
-**1.9TRANSACTIONS** 
+**1.9 TRANSACTIONS** 
 
 You can get the information of all transactions through the url **/transactions** of type GET.
 
@@ -170,7 +169,7 @@ You can receive and send money to other accounts. To do this you must use the ur
 
 -You can also set the "SEND" option as "transactionType", to send money to the desired account. You must always indicate the id of the account you want to work with and its secretKey.
 
-![p12]()
+![p12](https://github.com/julialaria/Midterm-Project/blob/main/12.JPG?raw=true)
  
 
  
