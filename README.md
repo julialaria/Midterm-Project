@@ -4,7 +4,7 @@ Welcome to our banking system. In the following, we will show you how to use our
 
 To start with, you can create our classes in tables by putting **“create”** in properties and linking it to a mysql schema. In the example, we use “banking” schema. You must add your username and password.
 
-Ej: jdbc:mysql://localhost:3306/**suesquema**?serverTimezone=UTC 
+Ej: jdbc:mysql://localhost:3306/**schema**?serverTimezone=UTC 
 
 ![p1](https://github.com/julialaria/Midterm-Project/blob/main/1.JPG?raw=true)
 
